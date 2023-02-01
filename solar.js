@@ -1,4 +1,4 @@
-import * as THREE from '../modules/three.module.js'; 
+import * as THREE from './js/three.module.js'; 
  
 export function solarSystem(scene, camera, renderer){
      const solarGroup = new THREE.Object3D();
@@ -119,23 +119,3 @@ export function solarSystem(scene, camera, renderer){
 }
 
 
-
-/////// 
-/* 
-Special Thangs to codrops https://tympanus.net/codrops/tag/three-js/
-
-Wael Yasmina
-Three.js Tutorial For Absolute Beginners
-https://youtu.be/xJAfLdUgdc4
-
-Simon Dev Youtube
-https://www.youtube.com/c/SimonDEV/videos
-
-Kyle Wetton
-https://github.com/kylewetton
-
-Textures are from Solar FileSystemhttps://www.solarsystemscope.com/ 
-
-background photos from unsplash.com
-Alexander Andrews, Guillermo Ferla, Aditya Hafiz, Nicole Avaglia, Pawel Czerwin, Raphael Nogueira
-*/
