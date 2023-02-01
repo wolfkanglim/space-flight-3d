@@ -1,4 +1,31 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+
+          * {
+               padding: 0;
+               margin: 0;
+               box-sizing: border-box;
+          }
+          body {
+               background-color: #ddd;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+          }
+          #canvas1 {
+               width: 100%;
+               height: 100%;
+          } 
+          #wolf-icon {
+               position: absolute;
+               top: 10px;
+               left: 20px;
+               width: 40px;
+               height: 40px;
+          }
+          .controls {
+               position: absolute;
+               top: 0;
+               right: 0;
+               color: white;
+               font-size: 0.7rem;
+          }
+     
