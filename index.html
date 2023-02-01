@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Yasmina Project Instance 55000</title>
+     <style>
+          * {
+               padding: 0;
+               margin: 0;
+               box-sizing: border-box;
+          }
+          body {
+               background-color: #ddd;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+          }
+          #canvas1 {
+               width: 100%;
+               height: 100%;
+          } 
+          #wolf-icon {
+               position: absolute;
+               top: 10px;
+               left: 20px;
+               width: 40px;
+               height: 40px;
+          }
+          .controls {
+               position: absolute;
+               top: 0;
+               right: 0;
+               color: white;
+               font-size: 0.7rem;
+          }
+     </style>
+</head>
+<body>
+     <canvas id="canvas1"></canvas>
+     <img id="wolf-icon" src="./images/wolfkangicon.jpg" alt="wolf icon">
+     <div class="controls">
+          CONTROLS<BR>
+          WASD (W: forward, S: backward, A: left, D: right)<br>
+          RF (R: elevate, F: descend)<br>
+          QE (roll), ↑ ↓ (pitch),  ← →(yaw)
+     </div>
+        
+     <script src="./script.js" type="module"></script>
+</body>
+</html>
+
+<!-- Franky Hung - FlyControls 
+https://medium.com/@franky-arkon-digital
+
+Three.js Tutorial by Wael Yasmina
+InstancedMesh
+https://www.youtube.com/watch?v=dKg5H1OtDK8&list=PLjcjAqAnHd1EIxV4FSZIiJZvsdrBc1Xho&index=41 -->
