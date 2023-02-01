@@ -1,8 +1,7 @@
 
-import * as THREE from '../modules/three.module.js';
-//import {OrbitControls} from '../modules/OrbitControls.js';
-import {FlyControls} from '../modules/FlyControls.js';
-//import {GLTFLoader} from '../modules/GLTFLoader.js';
+import * as THREE from './js/three.module.js';
+import {FlyControls} from './js/FlyControls.js';
+
 import {solarSystem} from './solar.js';
 
 
