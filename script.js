@@ -1,8 +1,10 @@
 
 import * as THREE from '../modules/three.module.js';
-import {OrbitControls} from '../modules/OrbitControls.js';
+//import {OrbitControls} from '../modules/OrbitControls.js';
 import {FlyControls} from '../modules/FlyControls.js';
 //import {GLTFLoader} from '../modules/GLTFLoader.js';
+import {solarSystem} from './solar.js';
+
 
 ///// Variables
 let camera, scene, renderer;
@@ -10,7 +12,8 @@ let flyControls;
 let greenPlanet;
 let particles;
 let instancedMesh, dummy;
-let instancedMeshCount = 5000;
+let particlesCount = 5000;
+let instancedMeshCount = 10000;
 let clock = new THREE.Clock();
 const matrix = new THREE.Matrix4();
 
@@ -21,21 +24,29 @@ lights();
 createGreenPlanet();
 createParticles();
 createInstances();
+solarSystem(scene, camera, renderer);
 renderer.setAnimationLoop(animate);
 
 
 function init(){
      scene = new THREE.Scene();
-     //scene.background = new THREE.Color(0x0000ff)
-     scene.background = new THREE.TextureLoader().load('./images/galaxy4.jpg');
+     const cubeTextureLoader = new THREE.CubeTextureLoader();
+     scene.background = cubeTextureLoader.load([
+          './images/space6.png',
+          './images/space5.png',
+          './images/space4.png',
+          './images/space3.png',
+          './images/space2.png',
+          './images/space1.png',
+     ]); 
 
      camera = new THREE.PerspectiveCamera(
           75,
           window.innerWidth / window.innerHeight,
           0.1,
-          1000
+          5000
      )
-     camera.position.set(-5, 10, 240);
+     camera.position.set(150, 10, 500);
 
      renderer = new THREE.WebGLRenderer({
           antialias: true,
@@ -59,7 +70,7 @@ function lights(){
 scene.add(ambientLight);
 
 const dirLight = new THREE.DirectionalLight(0xffffff, 2);
-dirLight.position.set(150, 500, 150);
+dirLight.position.set(150, 1500, 150);
 scene.add(dirLight);
 };
 
@@ -80,10 +91,9 @@ function createGreenPlanet(){
 
 function createParticles(){
      const particleGeometry = new THREE.BufferGeometry();
-     const countParticles = 5000;
-     const positions = new Float32Array(countParticles * 3);
-     for(let i = 0; i < countParticles * 3; i++){
-          positions[i] = (Math.random() - 0.5) * 500;
+     const positions = new Float32Array(particlesCount * 3);
+     for(let i = 0; i < particlesCount * 3; i++){
+          positions[i] = (Math.random() - 0.5) * 1000;
      }
      particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
      const particleMaterial = new THREE.PointsMaterial();
@@ -106,9 +116,9 @@ function createInstances(){
 
      dummy = new THREE.Object3D();
      for(let i = 0; i < instancedMeshCount; i++){
-          dummy.position.x = (Math.random() * 500 - 250) + 50;
+          dummy.position.x = (Math.random() * 250 - 150) + 50;
           dummy.position.y = (Math.random() * 100 - 50);
-          dummy.position.z = (Math.random() * 500 - 250);
+          dummy.position.z = (Math.random() * 250 - 150);
 
           dummy.rotation.x = Math.random() * Math.PI * 2;
           dummy.rotation.y = Math.random() * Math.PI * 2;
@@ -131,7 +141,7 @@ function createInstances(){
 function animate(time){     
      const elapsedTime = clock.getElapsedTime();
      greenPlanet.rotation.y += 0.0005;
-     flyControls.update(0.0025);
+     flyControls.update(0.005);
      particles.rotation.y = elapsedTime * 0.0222;
      for(let i = 0; i < instancedMeshCount; i++){
           instancedMesh.getMatrixAt(i, matrix);
