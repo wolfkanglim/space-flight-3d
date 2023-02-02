@@ -9,7 +9,7 @@ export function solarSystem(scene, camera, renderer){
 
      const sunGeometry = new THREE.SphereGeometry(50, 30, 30);
      const sunMaterial = new THREE.MeshBasicMaterial({
-          map:textureLoader.load('./images/2k_sun.jpg'),
+          map:textureLoader.load('./assets/images/2k_sun.jpg'),
      }) 
 
      const sun = new THREE.Mesh(sunGeometry, sunMaterial);
@@ -46,7 +46,7 @@ export function solarSystem(scene, camera, renderer){
 
      const earthGeometry = new THREE.SphereGeometry(10, 30, 30);
      const earthMaterial = new THREE.MeshPhongMaterial({
-          map:textureLoader.load('./images/2k_earth_daymap.jpg'),
+          map:textureLoader.load('./assets/images/2k_earth_daymap.jpg'),
      })
      const earth = new THREE.Mesh(earthGeometry, earthMaterial);
      const earthObj = new THREE.Object3D();
@@ -57,7 +57,7 @@ export function solarSystem(scene, camera, renderer){
 
      const moonGeometry = new THREE.SphereGeometry(3, 30, 30);
      const moonMaterial = new THREE.MeshPhongMaterial({
-          map:textureLoader.load('./images/2k_moon.jpg'),
+          map:textureLoader.load('./assets/images/2k_moon.jpg'),
      })
      const moon = new THREE.Mesh(moonGeometry, moonMaterial);
      const moonObj = new THREE.Object3D();
@@ -67,21 +67,21 @@ export function solarSystem(scene, camera, renderer){
      moon.position.x = 50;
 
      // function createPlanet
-     const mercury = createPlanet(3.2, './images/2k_mercury.jpg', 40);
-     const venus = createPlanet(6.4, './images/2k_venus_surface.jpg', 78);
-     const mars = createPlanet(5, './images/2k_mars.jpg', 100);
-     const jupiter = createPlanet(12, './images/2k_jupiter.jpg', 125);
-     const neptune = createPlanet(7.5, './images/2k_neptune.jpg', 255);
-     const pluto = createPlanet(2.8, './images/2k_venus_atmosphere.jpg', 290);
-     const saturn = createPlanet(11, './images/2k_saturn.jpg', 220, {
+     const mercury = createPlanet(3.2, './assets/images/2k_mercury.jpg', 40);
+     const venus = createPlanet(6.4, './assets/images/2k_venus_surface.jpg', 78);
+     const mars = createPlanet(5, './assets/images/2k_mars.jpg', 100);
+     const jupiter = createPlanet(12, './assets/images/2k_jupiter.jpg', 125);
+     const neptune = createPlanet(7.5, './assets/images/2k_neptune.jpg', 255);
+     const pluto = createPlanet(2.8, './assets/images/2k_venus_atmosphere.jpg', 290);
+     const saturn = createPlanet(11, './assets/images/2k_saturn.jpg', 220, {
           innerRadius: 34,
           outerRadius: 60,
-          texture: './images/2k_saturn_ring.jpg'
+          texture: './assets/images/2k_saturn_ring.jpg'
      });
-     const uranus = createPlanet(7, './images/2k_uranus.jpg', 186, {
+     const uranus = createPlanet(7, './assets/images/2k_uranus.jpg', 186, {
           innerRadius: 25,
           outerRadius: 46,
-          texture: './images/2k_uranus.jpg' 
+          texture: './assets/images/2k_uranus.jpg' 
      })
 
      const pointLight = new THREE.PointLight(0xffffff, 2, 300);
