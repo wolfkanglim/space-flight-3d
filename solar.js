@@ -2,7 +2,7 @@ import * as THREE from './js/three.module.js';
  
 export function solarSystem(scene, camera, renderer){
      const solarGroup = new THREE.Object3D();
-     solarGroup.position.set(800, 50, -1000);
+     solarGroup.position.set(1500, 100, -1000);
      solarGroup.rotation.z = Math.PI / 8;
      scene.add(solarGroup);
      const textureLoader = new THREE.TextureLoader();

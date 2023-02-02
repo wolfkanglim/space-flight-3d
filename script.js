@@ -34,9 +34,9 @@ function init(){
           './assets/images/space6.png',
           './assets/images/space5.png',
           './assets/images/space4.png',
-          './assets/images/space3.png',
-          './assets/images/space2.png',
           './assets/images/space1.png',
+          './assets/images/space2.png',
+          './assets/images/space3.png',
      ]); 
 
      camera = new THREE.PerspectiveCamera(
@@ -79,7 +79,7 @@ function createGreenPlanet(){
      const sphereGeometry = new THREE.SphereGeometry(30, 30, 30);
      const sphereMaterial = new THREE.MeshPhongMaterial({
           color: 0x04d9ff,     
-          map: textureLoader.load('./assets/exoplanets_img1.jpg')
+          map: textureLoader.load('./assets/images/exoplanets_img1.jpg')
      })
      greenPlanet = new THREE.Mesh(sphereGeometry, sphereMaterial);
      greenPlanet.position.set(0,2,0);
