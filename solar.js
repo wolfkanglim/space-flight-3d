@@ -87,6 +87,22 @@ export function solarSystem(scene, camera, renderer){
      const pointLight = new THREE.PointLight(0xffffff, 2, 300);
      sun.add(pointLight);
 
+     ///// Audios
+const listener = new THREE.AudioListener(); 
+camera.add(listener);
+const solarSound = new THREE.PositionalAudio(listener);
+const audioLoader = new THREE.AudioLoader();
+
+     audioLoader.load('./assets/audios/audios_bulbwhale.mp3', function(buffer){
+     solarSound.setBuffer(buffer);
+     solarSound.setLoop(true);
+     solarSound.setRefDistance(300);
+     solarSound.setVolume(0.5);
+     solarSound.play();
+     sun.add(solarSound);
+})
+
+
      function animate(){
      sun.rotateY(0.000284);
      earth.rotateY(0.048);

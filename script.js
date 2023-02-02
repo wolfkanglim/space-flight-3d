@@ -26,6 +26,19 @@ createInstances();
 solarSystem(scene, camera, renderer);
 renderer.setAnimationLoop(animate);
 
+///// Audios
+const listener = new THREE.AudioListener(); 
+camera.add(listener);
+const greenPlanetSound = new THREE.PositionalAudio(listener);
+const audioLoader = new THREE.AudioLoader();
+audioLoader.load('./assets/audios/audios_angler1.mp3', function(buffer){
+     greenPlanetSound.setBuffer(buffer);
+     greenPlanetSound.setLoop(true);
+     greenPlanetSound.setVolume(0.5);
+     greenPlanetSound.setRefDistance(200);
+     greenPlanetSound.play();
+     greenPlanet.add(greenPlanetSound);
+});
 
 function init(){
      scene = new THREE.Scene();
@@ -86,6 +99,7 @@ function createGreenPlanet(){
      scene.add(greenPlanet);
      greenPlanet.castShadow = true;
      greenPlanet.receiveShadow = true;
+     //greenPlanet.add(greenPlanetSound);
 };
 
 function createParticles(){
