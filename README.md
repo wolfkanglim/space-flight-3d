@@ -1,5 +1,8 @@
 # space-flight-3d
 Create a 3D solar system and galaxy use JavaScript Three.js Instanced Mesh, Fly Controls
+![instance3](https://user-images.githubusercontent.com/74490365/217379134-0ac8cc89-5dbc-42f7-b630-c2164ba3d3cd.png)
+![instance2](https://user-images.githubusercontent.com/74490365/217379189-0f8bb9db-aced-43a9-8913-0f42098bf620.png)
+
 ### Demo - Instanced Mesh - YouTube 
 https://www.youtube.com/watch?v=46pNtBeajUo
 
